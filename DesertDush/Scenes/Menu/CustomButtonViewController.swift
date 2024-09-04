@@ -2,13 +2,7 @@ import UIKit
 
 class CustomButtonViewController: UIViewController {
 
-    private let backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    private let backgroundImageView = createBackgroundImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +10,8 @@ class CustomButtonViewController: UIViewController {
     }
 
     private func setupView() {
-        // Установка фонового изображения для всего представления
-        if let image = UIImage(named: "Splash") {
-            backgroundImageView.image = image
-        }
-
         view.addSubview(backgroundImageView)
 
-        // Настройка ограничений для фонового изображения
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -50,8 +38,8 @@ class CustomButtonViewController: UIViewController {
 
     private func createLvlButton() -> UIButton {
         let button = UIButton(type: .system)
-        button.setTitle("Lvl 1", for: .normal)
-        button.setBackgroundImage(UIImage(named: "Property 1=Secondary"), for: .normal)
+//        button.setTitle("Lvl 1", for: .normal)
+        button.setBackgroundImage(UIImage(named: "Frame 1"), for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 30
         button.clipsToBounds = true
@@ -67,27 +55,15 @@ class CustomButtonViewController: UIViewController {
         button.layer.cornerRadius = 30
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
-
-        // Add target action for the shop button
         button.addTarget(self, action: #selector(shopButtonTapped), for: .touchUpInside)
-
         return button
     }
 
     // Кастомная кнопка возврата
     @objc private func shopButtonTapped() {
-        let imageButtonViewController = ImageButtonViewController()
-        let button = UIButton(type: .custom)
-        let image = UIImage(named: "Button Back")
-        button.setImage(image, for: .normal)
-        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        imageButtonViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
-        imageButtonViewController.navigationItem.hidesBackButton = true
+        let imageButtonViewController = ShopView()
+        setupCustomBackButton(for: imageButtonViewController)
         navigationController?.pushViewController(imageButtonViewController, animated: true)
-    }
-
-    @objc private func backButtonTapped() {
-        navigationController?.popViewController(animated: true)
     }
 
     private func createHistoryButton() -> UIButton {
@@ -98,13 +74,14 @@ class CustomButtonViewController: UIViewController {
         button.layer.cornerRadius = 30
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
-        // Add target action for the history button
         button.addTarget(self, action: #selector(historyButtonTapped), for: .touchUpInside)
         return button
     }
 
+    // Кастомная кнопка возврата
     @objc private func historyButtonTapped() {
         let historyViewController = HistoryView()
+        setupCustomBackButton(for: historyViewController)
         navigationController?.pushViewController(historyViewController, animated: true)
     }
 
@@ -116,7 +93,14 @@ class CustomButtonViewController: UIViewController {
         button.layer.cornerRadius = 30
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
         return button
+    }
+
+    @objc private func profileButtonTapped() {
+        let profileButtonTapped = ProfileView()
+        setupCustomBackButton(for: profileButtonTapped)
+        navigationController?.pushViewController(profileButtonTapped, animated: true)
     }
 
     private func createSettingsButton() -> UIButton {
@@ -127,7 +111,14 @@ class CustomButtonViewController: UIViewController {
         button.layer.cornerRadius = 30
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
         return button
+    }
+
+    @objc private func settingsButtonTapped() {
+        let settingsViewController = SettingsView()
+        setupCustomBackButton(for: settingsViewController)
+        navigationController?.pushViewController(settingsViewController, animated: true)
     }
 
     private func setupLayout(ovalButton: UIButton, circleButtons: [UIButton]) {

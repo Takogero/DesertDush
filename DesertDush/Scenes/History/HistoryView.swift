@@ -2,25 +2,9 @@ import UIKit
 
 class HistoryView: UIViewController {
 
-    private let backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-
-    private let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        return scrollView
-    }()
-
-    private let contentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    let backgroundImageView = createBackgroundImageView()
+    let scrollView = createScrollView()
+    let contentView = createContentView()
 
     private let imageButton1: UIButton = {
         let button = UIButton(type: .system)
@@ -28,57 +12,33 @@ class HistoryView: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalToConstant: 342).isActive = true
         button.heightAnchor.constraint(equalToConstant: 98).isActive = true
-
-        // Add target action for the imageButton1
         button.addTarget(self, action: #selector(imageButton1Tapped), for: .touchUpInside)
-
         return button
     }()
 
     private let imageButton2: UIButton = {
-        let button = UIButton(type: .system)
-        button.setBackgroundImage(UIImage(named: "History (1)"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalToConstant: 342).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 98).isActive = true
-        return button
+        return createShopButton(imageName: "History (1)", width: 342, height: 98)
     }()
 
     private let imageButton3: UIButton = {
-        let button = UIButton(type: .system)
-        button.setBackgroundImage(UIImage(named: "History (2)"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalToConstant: 342).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 98).isActive = true
-        return button
+        return createShopButton(imageName: "History (2)", width: 342, height: 98)
     }()
+
 
     private let imageButton4: UIButton = {
-        let button = UIButton(type: .system)
-        button.setBackgroundImage(UIImage(named: "History (3)"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalToConstant: 342).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 98).isActive = true
-        return button
+        return createShopButton(imageName: "History (3)", width: 342, height: 98)
     }()
+
 
     private let imageButton5: UIButton = {
-        let button = UIButton(type: .system)
-        button.setBackgroundImage(UIImage(named: "History (4)"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalToConstant: 342).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 98).isActive = true
-        return button
+        return createShopButton(imageName: "History (4)", width: 342, height: 98)
     }()
 
+
     private let imageButton6: UIButton = {
-        let button = UIButton(type: .system)
-        button.setBackgroundImage(UIImage(named: "History (5)"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalToConstant: 342).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 98).isActive = true
-        return button
+        return createShopButton(imageName: "History (5)", width: 342, height: 98)
     }()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,8 +53,6 @@ class HistoryView: UIViewController {
         contentView.addSubview(imageButton4)
         contentView.addSubview(imageButton5)
         contentView.addSubview(imageButton6)
-
-        backgroundImageView.image = UIImage(named: "Splash")
 
         // Set up constraints for the background image view
         NSLayoutConstraint.activate([
@@ -142,27 +100,11 @@ class HistoryView: UIViewController {
             imageButton6.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             imageButton6.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
-
-        // Set up the custom back button
-        let backButton = createBackButton()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
 
     // Action method for the imageButton1
     @objc private func imageButton1Tapped() {
         let historyDayViewController = HistoryDayView()
         navigationController?.pushViewController(historyDayViewController, animated: true)
-    }
-
-    private func createBackButton() -> UIButton {
-        let button = UIButton(type: .custom)
-        let image = UIImage(named: "Button Back")
-        button.setImage(image, for: .normal)
-        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        return button
-    }
-
-    @objc private func backButtonTapped() {
-        navigationController?.popViewController(animated: true)
     }
 }

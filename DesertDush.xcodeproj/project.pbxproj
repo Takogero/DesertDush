@@ -15,8 +15,15 @@
 		D06AF32C2C760B3700823BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06AF32B2C760B3700823BE0 /* Assets.xcassets */; };
 		D06AF32F2C760B3700823BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06AF32D2C760B3700823BE0 /* LaunchScreen.storyboard */; };
 		D06AF3372C761BCE00823BE0 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AF3362C761BCE00823BE0 /* UIColorExt.swift */; };
+		D0880B312C88A1C100EC3E65 /* BackgroundImageFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0880B302C88A1C100EC3E65 /* BackgroundImageFunc.swift */; };
+		D0880B332C88A4F500EC3E65 /* ScrollFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0880B322C88A4F500EC3E65 /* ScrollFunc.swift */; };
+		D0880B352C88A54C00EC3E65 /* ContentFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0880B342C88A54C00EC3E65 /* ContentFunc.swift */; };
+		D0880B372C88B46A00EC3E65 /* BackButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0880B362C88B46A00EC3E65 /* BackButtonExt.swift */; };
 		D0B865F52C87337C00572D31 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B865F42C87337C00572D31 /* HistoryView.swift */; };
 		D0B865FA2C87420900572D31 /* HistoryDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B865F92C87420900572D31 /* HistoryDayView.swift */; };
+		D0B865FC2C87483F00572D31 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B865FB2C87483F00572D31 /* ProfileView.swift */; };
+		D0B865FF2C875C1000572D31 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B865FE2C875C0F00572D31 /* Settings.swift */; };
+		D0B866012C88654D00572D31 /* ButtonFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B866002C88654D00572D31 /* ButtonFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +37,15 @@
 		D06AF32E2C760B3700823BE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D06AF3302C760B3700823BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D06AF3362C761BCE00823BE0 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		D0880B302C88A1C100EC3E65 /* BackgroundImageFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageFunc.swift; sourceTree = "<group>"; };
+		D0880B322C88A4F500EC3E65 /* ScrollFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollFunc.swift; sourceTree = "<group>"; };
+		D0880B342C88A54C00EC3E65 /* ContentFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFunc.swift; sourceTree = "<group>"; };
+		D0880B362C88B46A00EC3E65 /* BackButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonExt.swift; sourceTree = "<group>"; };
 		D0B865F42C87337C00572D31 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		D0B865F92C87420900572D31 /* HistoryDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDayView.swift; sourceTree = "<group>"; };
+		D0B865FB2C87483F00572D31 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D0B865FE2C875C0F00572D31 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D0B866002C88654D00572D31 /* ButtonFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +88,58 @@
 			path = DesertDush;
 			sourceTree = "<group>";
 		};
+		D0880B382C88BAAD00EC3E65 /* Func */ = {
+			isa = PBXGroup;
+			children = (
+				D0B866002C88654D00572D31 /* ButtonFunc.swift */,
+				D0880B302C88A1C100EC3E65 /* BackgroundImageFunc.swift */,
+				D0880B322C88A4F500EC3E65 /* ScrollFunc.swift */,
+				D0880B342C88A54C00EC3E65 /* ContentFunc.swift */,
+			);
+			path = Func;
+			sourceTree = "<group>";
+		};
+		D0880B3A2C88BD1200EC3E65 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				D069CE0C2C8486F70049B594 /* ShopView.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		D0880B3B2C88BD1900EC3E65 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				D0B865F92C87420900572D31 /* HistoryDayView.swift */,
+				D0B865F42C87337C00572D31 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		D0880B3C2C88BD2400EC3E65 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D0B865FB2C87483F00572D31 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D0880B3D2C88BD3100EC3E65 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D0B865FE2C875C0F00572D31 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D0880B3E2C88BD3A00EC3E65 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				D069CE0E2C849BEC0049B594 /* SplashScreenViewController.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		D0B865F62C87338800572D31 /* Supports */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,7 +152,9 @@
 		D0B865F72C8733A900572D31 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D0880B382C88BAAD00EC3E65 /* Func */,
 				D06AF3362C761BCE00823BE0 /* UIColorExt.swift */,
+				D0880B362C88B46A00EC3E65 /* BackButtonExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -94,13 +162,22 @@
 		D0B865F82C8733D600572D31 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D06AF3262C760B3600823BE0 /* CustomButtonViewController.swift */,
-				D069CE0C2C8486F70049B594 /* ShopView.swift */,
-				D0B865F42C87337C00572D31 /* HistoryView.swift */,
-				D0B865F92C87420900572D31 /* HistoryDayView.swift */,
-				D069CE0E2C849BEC0049B594 /* SplashScreenViewController.swift */,
+				D0B865FD2C875BCE00572D31 /* Menu */,
+				D0880B3A2C88BD1200EC3E65 /* Shop */,
+				D0880B3B2C88BD1900EC3E65 /* History */,
+				D0880B3C2C88BD2400EC3E65 /* Profile */,
+				D0880B3D2C88BD3100EC3E65 /* Settings */,
+				D0880B3E2C88BD3A00EC3E65 /* Loading */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D0B865FD2C875BCE00572D31 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				D06AF3262C760B3600823BE0 /* CustomButtonViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,12 +251,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0B865F52C87337C00572D31 /* HistoryView.swift in Sources */,
+				D0B865FC2C87483F00572D31 /* ProfileView.swift in Sources */,
 				D06AF3272C760B3600823BE0 /* CustomButtonViewController.swift in Sources */,
+				D0B866012C88654D00572D31 /* ButtonFunc.swift in Sources */,
 				D0B865FA2C87420900572D31 /* HistoryDayView.swift in Sources */,
+				D0880B372C88B46A00EC3E65 /* BackButtonExt.swift in Sources */,
+				D0B865FF2C875C1000572D31 /* Settings.swift in Sources */,
 				D06AF3372C761BCE00823BE0 /* UIColorExt.swift in Sources */,
+				D0880B312C88A1C100EC3E65 /* BackgroundImageFunc.swift in Sources */,
 				D069CE0F2C849BEC0049B594 /* SplashScreenViewController.swift in Sources */,
+				D0880B352C88A54C00EC3E65 /* ContentFunc.swift in Sources */,
 				D06AF3232C760B3600823BE0 /* AppDelegate.swift in Sources */,
 				D069CE0D2C8486F70049B594 /* ShopView.swift in Sources */,
+				D0880B332C88A4F500EC3E65 /* ScrollFunc.swift in Sources */,
 				D06AF3252C760B3600823BE0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
